@@ -1,0 +1,70 @@
+<template>
+	<div id="app">
+
+    <h1>Casa Bartolomeo</h1>
+	<p>Hier sind alle bisher gespeicherten Zitate zu finden. Aktuell kann man hier zwar nicht so viel machen, weil ich noch fleißig am Renovieren bin. Schaut auf dem Discord vorbei und fügt ein neues Zitat mit <code>!quote add [Autor] [Zitat]</code> hinzu! Passt nur auf die Sonderzeichen auf, die verwirren mich nämlich noch ein bisschen. :( #OtterLiebe</p>
+		<div class="quotelist" v-for="quote in quotes">
+			<div class="quotecard">
+			    <span class="id">#{{ quote.id }}</span> <span class="quote">{{ quote.quote }} - {{ quote.author_id }}</span><span class="toots">🔥: {{ quote.toots }}<br> 👢: {{ quote.boots }}</span>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+  name: 'quotes',
+  data () {
+    return {
+      quotes: null
+    }
+  },
+  mounted () {
+    axios
+      .get('http://0.0.0.0:80/quotes')
+      .then(response => (this.quotes = response.data))
+  }
+}
+</script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+#app {
+	width: auto;
+	margin-left: 20%;
+	margin-right: 20%;
+  font-family: 'Kreon','Segoe ui',Ubuntu,sans-serif;
+}
+
+.quotecard {
+	position: relative;
+	font-size: 1.4em;
+	display: block;
+	margin: 50px;
+	padding: 10%;
+	border: solid 2px #474747;
+	border-radius: 15px;
+	box-shadow: 5px 5px #a3a3a3;
+}
+
+.quotecard .id {
+	position: absolute;
+	z-index: 1;
+	display: block;
+	top: 3%;
+	right: 5%;
+	font-size: 1.7em;
+}
+
+.quotecard .quote {
+	z-index: 2;
+}
+
+.quotecard .toots {
+	display: block;
+	position: absolute;
+	bottom: 3%;
+	right: 5%;
+}
+
+</style>
