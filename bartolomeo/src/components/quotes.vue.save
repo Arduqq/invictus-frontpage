@@ -13,7 +13,6 @@
 
 <script>
 import axios from 'axios';
-
 export default {
   name: 'quotes',
   data () {
@@ -23,7 +22,7 @@ export default {
   },
   mounted () {
     axios
-      .get(`${'https://cors-anywhere.herokuapp.com/'}http://invictus.cool:5000/quotes`)
+      .get('http://0.0.0.0:5000/quotes', {)
       .then(response => (this.quotes = response.data))
   }
 }
