@@ -80,7 +80,9 @@ nav a span {
 }
 
 a {
+	text-decoration: none;
 	color: #cc9f3b;
+	transition: .1s ease-in-out;
 }
 
 
@@ -96,6 +98,7 @@ section {
 
 section p {
 	font-size:1.6em;
+	text-align: justify;
 }
 
 section h2 {
@@ -114,11 +117,9 @@ section:after {
 	background:rgba(117,81,125,0.15)
 }
 
-.visit-button {
-	background-color: #594b31; 
-  border: none;
-  color: white;
-  padding: 20px 22px;
+button {
+	border: none;
+	padding: 20px 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -126,13 +127,37 @@ section:after {
   transition: .2s;
   font-weight: bold;
   border-radius: 5px;
-  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
+.visit-button {
+	background-color: #594b31; 
+  color: white;
+}
+
 .visit-button:hover {
+	background-color: #f4b841;
+	color: white;
+}
+
+.invite-button {
+	background-color: darkblue; 
+  color: white;
+}
+
+.invite-button:hover {
+	background-color: #f4b841;
+	color: white;
+}
+
+.apply-button {
+	background-color: green; 
+  color: white;
+}
+
+.apply-button:hover {
 	background-color: #f4b841;
 	color: white;
 }
