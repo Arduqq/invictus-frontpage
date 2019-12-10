@@ -1,99 +1,185 @@
-body {
-    background-color: #212121;
-    color: white;
-    font-family: 'Nanum Gothic Coding', 'Segoe ui', Ubuntu, sans-serif;
-}
-
-h1 {
-    font-family: 'IBM Plex Sans', 'Segoe ui', Ubuntu, sans-serif;
-    transition: .2s;
-    font-size: 7vw;
-    display: inline-block;
-}
-
-.contentBox {
-    transition: .3s;
-    padding: 2vw;
-    right: 2vw;
-    top: 2vw;
-    position: absolute;
-    width: 45%;
-    align-items: center;
-    justify-content: center;
-    border: 15px solid rgb(172, 172, 172);
-    background-color: white;
-    color: black;
-}
-
-.header img {
-    transition: .1s ease-in-out;
-    float: left;
-    margin-right: 10px;
-    height: 8vw;
-}
-
-.header:hover img {
-    transform: translateY(-4px)
-}
-
-.header {
-    transition: .2s;
-    max-width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-.contentBox:hover {
-    transform: translate(-5px, -5px);
-    border-image-source: linear-gradient(45deg, rgb(94, 121, 196), rgb(145, 68, 76));
-    border-image-slice: 1;
-    box-shadow: 5px 5px rgb(65, 60, 99);
-}
-
-a {
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-size: 2vw;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-a:before {
-    transition: .2s;
-    content: '';
-    position: absolute;
-    height: 2.5vw;
-    width: 2.5vw;
-    margin-left: 3vw;
-    z-index: -1;
-    background-color: rgb(65, 60, 99);
-    transform: rotate(45deg);
-}
-
-.navList li:hover a:before {
-    transform: rotate(90deg);
-    transform: translateX(15vw);
-    background-color: #c24e4e;
-}
-
-.navList {
-    width: 30%;
-    display: block;
-    list-style: none;
-}
-
-.navList li {
-    margin: 2vw;
-    display: block;
-}
-
-.contentBox img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 17vw;
-}
+    body {
+        overflow: hidden;
+        background-color: #212121;
+        color: white;
+        font-family: 'Nanum Gothic Coding', 'Segoe ui', Ubuntu, sans-serif;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    h1 {
+        font-family: 'IBM Plex Sans', 'Segoe ui', Ubuntu, sans-serif;
+        transition: .2s;
+        font-size: 7vw;
+        display: inline-block;
+        text-shadow: 3px 3px rgb(145, 68, 76);
+    }
+    
+    .contentBox {
+        width: 45%;
+        position: absolute;
+        height: 80%;
+        right: -2vw;
+        top: 2vw;
+        text-align: justify;
+        overflow: auto;
+        transition: .3s;
+        padding: 2vw;
+        align-items: center;
+        justify-content: center;
+        border: 15px solid rgb(172, 172, 172);
+        background-color: white;
+        color: black;
+        font-size: 1vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        opacity: 0;
+        z-index: -1;
+    }
+    
+    .active {
+        right: 2vw;
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .header img {
+        transition: .1s ease-in-out;
+        float: left;
+        margin-right: 10px;
+        height: 8vw;
+    }
+    
+    .header:hover img {
+        transform: translateY(-4px)
+    }
+    
+    .header {
+        transition: .2s;
+        max-width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
+    .contentBox:hover {
+        transform: translate(-5px, -5px);
+        border-image-source: linear-gradient(45deg, rgb(94, 121, 196), rgb(145, 68, 76));
+        border-image-slice: 1;
+        box-shadow: 5px 5px rgb(65, 60, 99);
+    }
+    
+    a {
+        cursor: pointer;
+        transition: .1s;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(163, 46, 46);
+    }
+    
+    .navList a {
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 2vw;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .navList a:before {
+        transition: .2s;
+        content: '';
+        position: absolute;
+        height: 2.5vw;
+        width: 2.5vw;
+        margin-left: 3vw;
+        z-index: -1;
+        background-color: rgb(65, 60, 99);
+        transform: rotate(45deg);
+    }
+    
+    .navList li:hover a:before {
+        transform: rotate(90deg);
+        transform: translateX(15vw);
+        background-color: #c24e4e;
+    }
+    
+    .navList {
+        width: 30%;
+        display: block;
+        list-style: none;
+    }
+    
+    .navList li {
+        margin: 2vw;
+    }
+    
+    .contentBox img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 17vw;
+    }
+    
+    .secretBox {
+        background-color: #2c2b2b;
+        color: white;
+    }
+    
+    .secretBox input {
+        width: 50%;
+        margin: 1vw;
+        padding: 1vw;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 2px dashed white;
+        background-color: #2c2b2b;
+        color: white;
+        font-size: 2vw;
+        font-family: 'IBM Plex Sans', 'Segoe ui', Ubuntu, sans-serif;
+    }
+    
+    footer {
+        transition: .1s;
+        padding: 2px;
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+        font-size: 1em;
+    }
+    
+    footer:hover {
+        display: block;
+        border-radius: 100%;
+        background-color: white;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .contentBox {
+            width: 70%;
+            height: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 100px;
+        }
+        .navList {
+            display: inline-block;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            width: 100%;
+        }
+        .navList li {
+            float: left;
+        }
+        .header {
+            max-width: 100%;
+            font-size: 1rem;
+        }
+    }

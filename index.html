@@ -4,12 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Invictus</title>
+    <title>🦅 Invictus</title>
+    <meta name="description" content="Die wohl schönste Gilde für pensionierte Gamer" />
     <link href="css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script>
+        function toggleView(view) {
+            var currentView = document.getElementsByClassName("active")[0];
+            currentView.classList.remove("active");
+            var newView = document.getElementsByClassName(view)[0];
+            newView.classList.add("active");
+        }
+    </script>
 </head>
 
 <body>
@@ -20,25 +29,47 @@
         </div>
         <nav>
             <ul class="navList">
-                <li><a href=""><i class="em em-dolphin" aria-role="presentation" aria-label="DOLPHIN"></i> Rezeption</a> </li>
+                <li><a onclick="toggleView('welcomeBox')"><i class="em em-dolphin" aria-role="presentation" aria-label="DOLPHIN"></i> Rezeption</a> </li>
                 <li>
-                    <a href=""><i class="em em-coffee" aria-role="presentation" aria-label="HOT BEVERAGE"></i> Wartezimmer</a> </li>
+                    <a onclick="toggleView('applyBox')"><i class="em em-coffee" aria-role="presentation" aria-label="HOT BEVERAGE"></i> Wartezimmer</a> </li>
                 <li>
-                    <a href=""><i class="em em-whale" aria-role="presentation" aria-label="HEDGEHOG"></i> Neuschwabenland</a>
+                    <a onclick="toggleView('discordBox')"><i class="em em-whale" aria-role="presentation" aria-label="HEDGEHOG"></i> Neuschwabenland</a>
                 </li>
                 <li>
-                    <a href=""><i class="em em-hedgehog" aria-role="presentation" aria-label="HEDGEHOG"></i> Geheimversteck</a>
+                    <a onclick="toggleView('secretBox')"><i class="em em-hedgehog" aria-role="presentation" aria-label="HEDGEHOG"></i> Geheimversteck</a>
                 </li>
             </ul>
 
 
 
         </nav>
-        <div class="contentBox">
-            <h3>Hallo.</h3>
+        <div class="contentBox welcomeBox active">
+            <h2>Hallu.</h2>
+            Wir sind eine abgefuckte Gilde für abgefuckte Misfits. Wir sind <b>das</b> safe haven für Hängengebliebene und solche, die es gerne werden wollen. Wir lieben jeden, also sagt doch mal Hallo! <i class="em em-wave" aria-role="presentation" aria-label="WAVING HAND SIGN"></i>            <br> Kuss auf die Nuss! <i class="em em-kiss" aria-role="presentation" aria-label="KISS MARK"></i>
+            <img src="barth.gif">
+        </div>
+        <div class="contentBox applyBox">
+            <h2>Wir finden dich schön.</h2>
+            Du bist uns schon pange aufgefallen und wir wollen dich. Damit wir wissen, was du für eine Type bist, benötigen wir aber selbstverständlich einige Eckdaten von dir? Das Auswahlverfahren ist überaus strikt und <b>jede</b> deiner Antworten wird
+            auf die Goldwaage gelegt.
+            <a href="">Hier geht es zur Bewerbung!</a>
+        </div>
+        <div class="contentBox discordBox">
+            <h2>Wir wollen dich kennenlernen.</h2>
+            Wir haben einen überaus wohlgepflegten Discord-Server mit einem <b>hauseigenen</b> Bot, der <b>allerhöchstens</b> <i>10%</i> der Zeit auch wirklich aktiv ist und davon zu <i>0.05%</i> aktiv genutzt wird, um peinliche Zitate von vor fünf Jahren
+            zu posten. Es ist großartig, du musst dir das ansehen. <a href="">Hier geht es zur Dokumentation von Bartolomeo! <i class="em em-bear" aria-role="presentation" aria-label="BEAR FACE"></i></a>
+        </div>
+        <div class="contentBox secretBox">
+            <h2>Wir kennen dich in- und auswendig.</h2>
+            Das hier ist nur für Personal.<br>
+            <input type="password">
             <img src="arkuna.png">
         </div>
     </main>
+    <footer>
+        <a href="https://github.com/Arduqq/">
+            <i class="em em-duck" aria-role="presentation" aria-label="DUCK"></i></a>
+    </footer>
 </body>
 
 </html>
