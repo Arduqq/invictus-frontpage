@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🦅 Invictus</title>
+    <meta name="description" content="Die wohl schönste Gilde für pensionierte Gamer" />
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        function printCalendar() {
+            var calendarId = '17hgsnuk74scht3eqi2pj18p1g@group.calendar.google.com';
+            var apiKey = 'AIzaSyA8jekTKf_WHsCS4mS7RuV41dCeKnb98Gs';
+            var userTimeZone = "Europe/Berlin";
+
+            gapi.client.init({
+                'apiKey': apiKey,
+                'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+            }).then(function() {
+                return gapi.client.calendar.events.list({
+                    'calendarId': calendarId,
+                    'timeZone': userTimeZone,
+                    'singleEvents': true,
+                    'timeMin': (new Date()).toISOString(),
+                    'maxResults': 20,
+                    'orderBy': 'startTime'
+                });
+            }).then(function(response) {
+                console.log(response);
+                if (response.result.items) {
+                    var calendarRows = ['<table class="invictus-calendar"><tbody>'];
+                    response.result.items.forEach(function(entry) {
+                        var startsAt = moment(entry.start.dateTime).format("L") + ' ' + moment(entry.start.dateTime).format("LT");
+                        var endsAt = moment(entry.end.dateTime).format("LT");
+                        calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
+                    });
+                    calendarRows.push('</tbody></table>');
+                    $('#invictus-calendar').html(calendarRows.join(""));
+                }
+            }, function(reason) {
+                console.log('Error: ' + reason.result.error.message);
+            });
+        };
+
+        gapi.load('client', printCalendar);
+    </script>
+</head>
+
+<body>
+    <main>
+        <div id="invictus-calendar"></div>
+    </main>
+    <footer>
+        <a href="https://github.com/Arduqq/">
+            <i class="em em-duck" aria-role="presentation" aria-label="DUCK"></i></a>
+    </footer>
+</body>
+
+</html>
