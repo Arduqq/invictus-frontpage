@@ -14,47 +14,57 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2/moment.min.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
-        function printCalendar() {
-            var calendarId = '17hgsnuk74scht3eqi2pj18p1g@group.calendar.google.com';
-            var apiKey = 'AIzaSyA8jekTKf_WHsCS4mS7RuV41dCeKnb98Gs';
-            var userTimeZone = "Europe/Berlin";
-
-            gapi.client.init({
-                'apiKey': apiKey,
-                'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-            }).then(function() {
-                return gapi.client.calendar.events.list({
-                    'calendarId': calendarId,
-                    'timeZone': userTimeZone,
-                    'singleEvents': true,
-                    'timeMin': (new Date()).toISOString(),
-                    'maxResults': 20,
-                    'orderBy': 'startTime'
-                });
-            }).then(function(response) {
-                console.log(response);
-                if (response.result.items) {
-                    var calendarRows = ['<table class="invictus-calendar"><tbody>'];
-                    response.result.items.forEach(function(entry) {
-                        var startsAt = moment(entry.start.dateTime).format("L") + ' ' + moment(entry.start.dateTime).format("LT");
-                        var endsAt = moment(entry.end.dateTime).format("LT");
-                        calendarRows.push(`<tr><td>${startsAt} - ${endsAt}</td><td>${entry.summary}</td></tr>`);
-                    });
-                    calendarRows.push('</tbody></table>');
-                    $('#invictus-calendar').html(calendarRows.join(""));
-                }
-            }, function(reason) {
-                console.log('Error: ' + reason.result.error.message);
-            });
-        };
-
-        gapi.load('client', printCalendar);
     </script>
 </head>
 
 <body>
     <main>
-        <div id="invictus-calendar"></div>
+      <div class="invictus-calendar">
+        <h2>Bevorstehende Events</h2>
+        <span class="month-name">Juluar</span>
+        <div class="week">
+          <div class="day">1</div>
+          <div class="day">2</div>
+          <div class="day">3</div>
+          <div class="day">4</div>
+        </div>
+        <div class="week">
+          <div class="day">5</div>
+          <div class="day">6</div>
+          <div class="day">7</div>
+          <div class="day">8</div>
+          <div class="day">9</div>
+          <div class="day">10</div>
+          <div class="day">11 🎥 <p><a href="">Filmabend</a>: Vertigo</p></div>
+        </div>
+        <div class="week">
+          <div class="day">12 🌶️ <p><a href="">SuperSlappypappy-Stammtisch #14</a></p></div>
+          <div class="day">13</div>
+          <div class="day">14 <p>Mettwoch</p></div>
+          <div class="day">15</div>
+          <div class="day">16</div>
+          <div class="day">17</div>
+          <div class="day">18 🎥 <p><a href="">Filmabend</a>: Suspiria</p></div>
+        </div>
+        <div class="week">
+          <div class="day">19</div>
+          <div class="day">20</div>
+          <div class="day">21</div>
+          <div class="day">22 🎂 <p>Craftys Geburtstag</p></div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+          <div class="day">25 🎥 <p><a href="">Filmabend</a>: Julia's Eyes</p></div>
+        </div>
+        <div class="week">
+          <div class="day">26 <p>Dragon Monday 🐉</p></div>
+          <div class="day">27</div>
+          <div class="day">28</div>
+          <div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day">31</div>
+        </div>
+        <input class="add-event-button" value="+" type="button">
+      </div>
     </main>
     <footer>
         <a href="https://github.com/Arduqq/">
