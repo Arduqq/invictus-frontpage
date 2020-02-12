@@ -214,7 +214,7 @@
     
     .invictus-calendar {
         max-width: 560px;
-        margin: 5vw auto;
+        margin: 1vw auto;
     }
     
     .week {
@@ -263,7 +263,7 @@
     
     main {
         margin: auto;
-        width: 70%;
+        width: 80%;
     }
     
     table tr {
