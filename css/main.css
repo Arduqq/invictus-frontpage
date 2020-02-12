@@ -1,5 +1,4 @@
     body {
-        overflow: hidden;
         background-color: #212121;
         color: white;
         font-family: 'Nanum Gothic Coding', 'Segoe ui', Ubuntu, sans-serif;
@@ -10,7 +9,7 @@
         -ms-user-select: none;
         user-select: none;
     }
-
+    
     h1 {
         font-family: 'IBM Plex Sans', 'Segoe ui', Ubuntu, sans-serif;
         transition: .2s;
@@ -18,7 +17,7 @@
         display: inline-block;
         text-shadow: 3px 3px rgb(145, 68, 76);
     }
-
+    
     .contentBox {
         width: 45%;
         position: absolute;
@@ -39,24 +38,24 @@
         opacity: 0;
         z-index: -1;
     }
-
+    
     .active {
         right: 2vw;
         opacity: 1;
         z-index: 1;
     }
-
+    
     .header img {
         transition: .1s ease-in-out;
         float: left;
         margin-right: 10px;
         height: 8vw;
     }
-
+    
     .header:hover img {
         transform: translateY(-4px)
     }
-
+    
     .header {
         transition: .2s;
         max-width: 40%;
@@ -65,14 +64,14 @@
         justify-content: center;
         font-size: 2rem;
     }
-
+    
     .contentBox:hover {
         transform: translate(-5px, -5px);
         border-image-source: linear-gradient(45deg, rgb(94, 121, 196), rgb(145, 68, 76));
         border-image-slice: 1;
         box-shadow: 5px 5px rgb(65, 60, 99);
     }
-
+    
     a {
         cursor: pointer;
         transition: .1s;
@@ -80,7 +79,7 @@
         text-decoration: none;
         color: rgb(163, 46, 46);
     }
-
+    
     .navList a {
         text-align: center;
         text-decoration: none;
@@ -90,7 +89,7 @@
         align-items: center;
         justify-content: center;
     }
-
+    
     .navList a:before {
         transition: .2s;
         content: '';
@@ -102,35 +101,35 @@
         background-color: rgb(65, 60, 99);
         transform: rotate(45deg);
     }
-
+    
     .navList li:hover a:before {
         transform: rotate(90deg);
         transform: translateX(15vw);
         background-color: #c24e4e;
     }
-
+    
     .navList {
         width: 30%;
         display: block;
         list-style: none;
     }
-
+    
     .navList li {
         margin: 2vw;
     }
-
+    
     .contentBox img {
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 17vw;
     }
-
+    
     .secretBox {
         background-color: #2c2b2b;
         color: white;
     }
-
+    
     .secretBox input {
         width: 50%;
         margin: 1vw;
@@ -144,7 +143,7 @@
         font-size: 2vw;
         font-family: 'IBM Plex Sans', 'Segoe ui', Ubuntu, sans-serif;
     }
-
+    
     footer {
         transition: .1s;
         padding: 2px;
@@ -153,13 +152,13 @@
         left: 5px;
         font-size: 1em;
     }
-
+    
     footer:hover {
         display: block;
         border-radius: 100%;
         background-color: white;
     }
-
+    
     @media only screen and (max-width: 600px) {
         .contentBox {
             width: 70%;
@@ -183,68 +182,92 @@
             font-size: 1rem;
         }
     }
-
-.week {
-  display: flex;
-}
-
-.day {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  overflow: hidden;
-}
-
-.day:hover {
-  overflow: visible;
-}
-
-.day p {
-  font-size: .7em;
-  font-weight: bold;
-  color: #909090;
-}
-
-.week:first-of-type .day:first-of-type {
-  margin-left: 42.85714%;
-}
-
-.week:last-of-type .day:last-of-type {
-  margin-right: 14.285%;
-}
-
-.invictus-calendar {
-  max-width: 560px;
-  margin: 50px auto;
-}
-
-.week {
-  height: 80px;
-}
-
-.day {
-  color: rgb(145, 68, 76);
-  padding: 5px;
-  background-color: transparentize(white, 0.30);
-  box-shadow:
-    -1px -1px rgb(145, 68, 76),
-    inset -1px -1px 0 0 rgb(145, 68, 76);
-}
-
-.month-name {
-  font-size: 2.2em;
-  font-weight: bold;
-}
-
-.add-event-button {
-  transition: .3s;
-  display: inline-block;
-  margin: 1vw auto;
-  border-color: rgb(145, 68, 76);
-  color: rgb(145, 68, 76);
-  border-radius: 100%;
-  background-color: #212121;
-  height: 50px;
-  width: 50px;
-  font-size: 1vw;
-}
+    
+    .week {
+        display: flex;
+    }
+    
+    .day {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        overflow: hidden;
+    }
+    
+    .day:hover {
+        overflow: visible;
+    }
+    
+    .day p {
+        font-size: .7em;
+        font-weight: bold;
+        color: #909090;
+    }
+    
+    .week:first-of-type .day:first-of-type {
+        margin-left: 42.85714%;
+    }
+    
+    .week:last-of-type .day:last-of-type {
+        margin-right: 14.285%;
+    }
+    
+    .invictus-calendar {
+        max-width: 560px;
+        margin: 5vw auto;
+    }
+    
+    .week {
+        height: 80px;
+    }
+    
+    .day {
+        color: rgb(145, 68, 76);
+        padding: 5px;
+        background-color: transparentize(white, 0.30);
+        box-shadow: -1px -1px rgb(145, 68, 76), inset -1px -1px 0 0 rgb(145, 68, 76);
+    }
+    
+    .month-name {
+        font-size: 2.2em;
+        font-weight: bold;
+    }
+    
+    .add-event-button {
+        transition: .3s;
+        display: inline-block;
+        margin: 1vw auto;
+        border-color: rgb(145, 68, 76);
+        color: rgb(145, 68, 76);
+        border-radius: 100%;
+        background-color: #212121;
+        height: 50px;
+        width: 50px;
+        font-size: 1vw;
+    }
+    
+    .secretNav {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        top: 0;
+        width: 100%;
+        padding: 1vw;
+        font-size: 1vw;
+        text-align: center;
+    }
+    
+    .secretNavElement {
+        color: white;
+        display: inline-block;
+        padding: 1vw;
+    }
+    
+    main {
+        margin: auto;
+        width: 70%;
+    }
+    
+    table tr {
+        min-width: 3em;
+        margin-bottom: .5vw;
+        border-bottom: white;
+    }
